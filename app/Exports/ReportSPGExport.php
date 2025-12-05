@@ -66,29 +66,34 @@ class ReportSPGExport implements FromCollection, WithHeadings, WithMapping, With
 
     public function map($report): array
     {
+        // Helper untuk ubah null / '' / '0' / 0 jadi ''
+        $fix = function($v) {
+            return ($v == null || $v == '' || $v == 0) ? '' : $v;
+        };
+
         $rows = [];
-        
+
         if ($report->details->count() > 0) {
             foreach ($report->details as $index => $detail) {
                 $rows[] = [
-                    $report->kode_report,
-                    $report->tanggal->format('d/m/Y'),
-                    $report->nama_spg,
-                    $report->toko->nama_toko,
-                    $detail->item_code,
-                    $detail->nama_barang,
-                    $detail->ukuran ?? '-',
-                    $detail->qty_terjual,
-                    $detail->qty_masuk,
-                    $detail->catatan ?? '-',
+                    $fix($report->kode_report),
+                    $fix($report->tanggal->format('d/m/Y')),
+                    $fix($report->nama_spg),
+                    $fix($report->toko->nama_toko),
+                    $fix($detail->item_code),
+                    $fix($detail->nama_barang),
+                    $fix($detail->ukuran),
+                    $fix($detail->qty_terjual),
+                    $fix($detail->qty_masuk),
+                    $fix($detail->catatan),
                 ];
             }
         } else {
             $rows[] = [
-                $report->kode_report,
-                $report->tanggal->format('d/m/Y'),
-                $report->nama_spg,
-                $report->toko->nama_toko,
+                $fix($report->kode_report),
+                $fix($report->tanggal->format('d/m/Y')),
+                $fix($report->nama_spg),
+                $fix($report->toko->nama_toko),
                 '',
                 'Tidak ada data detail',
                 '',
@@ -97,9 +102,10 @@ class ReportSPGExport implements FromCollection, WithHeadings, WithMapping, With
                 '',
             ];
         }
-        
+
         return $rows;
     }
+
 
     public function styles(Worksheet $sheet)
     {

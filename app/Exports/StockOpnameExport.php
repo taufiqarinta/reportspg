@@ -71,22 +71,27 @@ class StockOpnameExport implements FromCollection, WithHeadings, WithMapping, Wi
 
     public function map($opname): array
     {
+        // Helper untuk ubah null / '' / '0' / 0 jadi ''
+        $fix = function($v) {
+            return ($v === null || $v === '' || $v == 0) ? '' : $v;
+        };
+
         $rows = [];
         
         foreach ($opname->details as $detail) {
             $rows[] = [
-                $opname->kode_opname,
-                $opname->tanggal->format('d/m/Y'),
-                $opname->nama_toko,
-                $opname->tahun,
-                $this->getMonthName($opname->bulan),
-                ucfirst($opname->status),
-                $opname->nama_spg,
-                $detail->item_code,
-                $detail->nama_barang,
-                $detail->ukuran,
-                $detail->stock,
-                $detail->keterangan
+                $fix($opname->kode_opname),
+                $fix($opname->tanggal->format('d/m/Y')),
+                $fix($opname->nama_toko),
+                $fix($opname->tahun),
+                $fix($this->getMonthName($opname->bulan)),
+                $fix(ucfirst($opname->status)),
+                $fix($opname->nama_spg),
+                $fix($detail->item_code),
+                $fix($detail->nama_barang),
+                $fix($detail->ukuran),
+                $fix($detail->stock),
+                $fix($detail->keterangan),
             ];
         }
         
