@@ -223,7 +223,7 @@ class ReportStockSPGExport implements FromCollection, WithHeadings, WithMapping,
 
         // Helper untuk ubah null / '' / 0 jadi ''
         $fix = function($v) {
-            return ($v === null || $v === '' || $v === 0) ? '' : $v;
+            return ($v == null || $v == '' || $v == 0) ? '' : $v;
         };
 
         return [
