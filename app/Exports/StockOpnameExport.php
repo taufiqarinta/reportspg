@@ -73,7 +73,7 @@ class StockOpnameExport implements FromCollection, WithHeadings, WithMapping, Wi
     {
         // Helper untuk ubah null / '' / '0' / 0 jadi ''
         $fix = function($v) {
-            return ($v === null || $v === '' || $v == 0) ? '' : $v;
+            return ($v == null || $v == '' || $v == 0) ? '' : $v;
         };
 
         $rows = [];

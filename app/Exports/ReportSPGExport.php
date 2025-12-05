@@ -22,7 +22,7 @@ class ReportSPGExport implements FromCollection, WithHeadings, WithMapping, With
 
     public function collection()
     {
-        $query = FormReportSPG::with(['details', 'user'. 'toko']);
+        $query = FormReportSPG::with(['details', 'user', 'toko']);
         
         // Filter berdasarkan role user
         if ($this->filters['user_role'] == 0) {
