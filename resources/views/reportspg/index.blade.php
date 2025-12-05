@@ -53,14 +53,14 @@
 
                         <!-- Tanggal Mulai -->
                         <div class="min-w-[150px]">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Mulai</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Awal</label>
                             <input type="date" name="start_date" value="{{ $filters['start_date'] ?? '' }}" 
                                 class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                         </div>
 
                         <!-- Tanggal Akhir -->
                         <div class="min-w-[150px]">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Akhir</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Akhir</label>
                             <input type="date" name="end_date" value="{{ $filters['end_date'] ?? '' }}" 
                                 class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                         </div>
