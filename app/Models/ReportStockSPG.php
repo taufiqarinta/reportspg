@@ -69,7 +69,7 @@ class ReportStockSPG extends Model
         
         if ($lastReport) {
             // Extract nomor dari kode terakhir
-            $lastNumber = (int) substr($lastReport->kode_report, 11);
+            $lastNumber = (int) substr($lastReport->kode_report, 9);
             $newNumber = $lastNumber + 1;
         } else {
             $newNumber = 1;

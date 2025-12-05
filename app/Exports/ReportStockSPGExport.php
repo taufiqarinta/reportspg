@@ -220,33 +220,39 @@ class ReportStockSPGExport implements FromCollection, WithHeadings, WithMapping,
     {
         static $index = 0;
         $index++;
-        
+
+        // Helper untuk ubah null / '' / 0 jadi ''
+        $fix = function($v) {
+            return ($v === null || $v === '' || $v === 0) ? '' : $v;
+        };
+
         return [
-            $index,  // No
-            $row['nama_spg'],  // Nama SPG
-            $row['nama_toko'],  // Nama Toko
-            $row['item_code'],  // Kode Item
-            $row['item_name'],  // Nama Barang
-            $row['ukuran'] ?? '-',  // Ukuran
-            $row['stock_awal_bulan'],  // Stock Awal Bulan
-            $row['catatan_stock_awal'] ?? '',  // Catatan Stock Awal (baru)
-            $row['qty_masuk_minggu1'],  // Qty Masuk Minggu 1
-            $row['qty_masuk_minggu2'],  // Qty Masuk Minggu 2
-            $row['qty_masuk_minggu3'],  // Qty Masuk Minggu 3
-            $row['qty_masuk_minggu4'],  // Qty Masuk Minggu 4
-            $row['qty_masuk_minggu5'],  // Qty Masuk Minggu 5
-            $row['catatan_minggu1'] ?? '',  // Catatan Minggu 1
-            $row['catatan_minggu2'] ?? '',  // Catatan Minggu 2
-            $row['catatan_minggu3'] ?? '',  // Catatan Minggu 3
-            $row['catatan_minggu4'] ?? '',  // Catatan Minggu 4
-            $row['catatan_minggu5'] ?? '',  // Catatan Minggu 5
-            $row['stock_minggu1'],  // Stock Minggu 1
-            $row['stock_minggu2'],  // Stock Minggu 2
-            $row['stock_minggu3'],  // Stock Minggu 3
-            $row['stock_minggu4'],  // Stock Minggu 4
-            $row['stock_minggu5'],  // Stock Minggu 5
+            $index,
+            $fix($row['nama_spg']),
+            $fix($row['nama_toko']),
+            $fix($row['item_code']),
+            $fix($row['item_name']),
+            $fix($row['ukuran']),
+            $fix($row['stock_awal_bulan']),
+            $fix($row['catatan_stock_awal']),
+            $fix($row['qty_masuk_minggu1']),
+            $fix($row['qty_masuk_minggu2']),
+            $fix($row['qty_masuk_minggu3']),
+            $fix($row['qty_masuk_minggu4']),
+            $fix($row['qty_masuk_minggu5']),
+            $fix($row['catatan_minggu1']),
+            $fix($row['catatan_minggu2']),
+            $fix($row['catatan_minggu3']),
+            $fix($row['catatan_minggu4']),
+            $fix($row['catatan_minggu5']),
+            $fix($row['stock_minggu1']),
+            $fix($row['stock_minggu2']),
+            $fix($row['stock_minggu3']),
+            $fix($row['stock_minggu4']),
+            $fix($row['stock_minggu5']),
         ];
     }
+
 
     public function styles(Worksheet $sheet)
     {
