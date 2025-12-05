@@ -18,8 +18,8 @@ class ReportSPGController extends Controller
      */
     private function checkAuthorization(FormReportSPG $reportspg)
     {
-        dd($user->id);
         $user = Auth::user();
+        dd($user->id);
         
         // Jika user adalah admin (role_as = 1), izinkan akses
         if ($user->role_as == 1) {
