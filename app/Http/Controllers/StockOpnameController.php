@@ -28,7 +28,7 @@ class StockOpnameController extends Controller
         }
         
         // Jika user biasa (role_as = 0), cek apakah data miliknya
-        if ($opname->user_id !== $user->id) {
+        if ($opname->user_id != $user->id) {
             abort(403, 'Unauthorized action.');
         }
         
