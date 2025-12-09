@@ -44,7 +44,7 @@
                             </div>
 
                             <div>
-                                <x-input-label for="tanggal" :value="__('Tanggal Report')" />
+                                <x-input-label for="tanggal" :value="__('Tanggal Penjualan')" />
                                 <x-text-input id="tanggal" 
                                             class="block mt-1 w-full" 
                                             type="date" 

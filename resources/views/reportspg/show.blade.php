@@ -34,7 +34,7 @@
                             <p class="mt-1 text-lg font-semibold text-gray-900">{{ $reportspg->kode_report }}</p>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium text-gray-500">Tanggal</h4>
+                            <h4 class="text-sm font-medium text-gray-500">Tanggal Penjualan</h4>
                             <p class="mt-1 text-lg text-gray-900">{{ $reportspg->tanggal->format('d F Y') }}</p>
                         </div>
                         <div>

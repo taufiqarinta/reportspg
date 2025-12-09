@@ -28,7 +28,7 @@
                         <!-- Header Information -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 p-4 bg-gray-50 rounded-lg">
                             <div>
-                                <x-input-label for="tanggal" :value="__('Tanggal Report')" />
+                                <x-input-label for="tanggal" :value="__('Tanggal Penjualan')" />
                                 <x-text-input id="tanggal" 
                                             class="block mt-1 w-full" 
                                             type="date" 

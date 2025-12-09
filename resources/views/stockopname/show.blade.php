@@ -36,7 +36,7 @@
                             <p class="mt-1 text-lg font-semibold text-gray-900">{{ $stockopname->kode_opname }}</p>
                         </div>
                         <div>
-                            <h4 class="text-sm font-medium text-gray-500">Tanggal Opname</h4>
+                            <h4 class="text-sm font-medium text-gray-500">Tanggal Stock Opname</h4>
                             <p class="mt-1 text-lg font-semibold text-gray-900">
                                 {{ $stockopname->tanggal->format('d F Y') }}
                             </p>

@@ -109,7 +109,7 @@
                                     <thead>
                                         <tr>
                                             <th class="column-kode">Kode Opname</th>
-                                            <th class="column-tanggal">Tanggal</th>
+                                            <th class="column-tanggal">Tanggal Stock Opname</th>
                                             <th class="column-spg">Nama SPG</th>
                                             <th class="column-toko">Nama Toko</th>
                                             <th class="column-period">Periode</th>

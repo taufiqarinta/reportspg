@@ -76,7 +76,7 @@
                             
                             <!-- Tanggal -->
                             <div>
-                                <x-input-label for="tanggal" :value="__('Tanggal Opname')" />
+                                <x-input-label for="tanggal" :value="__('Tanggal Stock Opname')" />
                                 <x-text-input id="tanggal" 
                                             class="block mt-1 w-full" 
                                             type="date" 
